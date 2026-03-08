@@ -13,30 +13,20 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Neural Style Transfer API',
-    description: 'Production-ready REST API that applies artistic styles to images using deep learning. Processes 10,000+ images daily with 99.9% uptime.',
-    technologies: ['PyTorch', 'FastAPI', 'Docker', 'AWS Lambda', 'S3'],
-    metrics: ['10K+ daily requests', '99.9% uptime', '2.5s avg latency'],
-    image: 'https://images.unsplash.com/photo-1678845536613-5cf0ec5245cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWNoaW5lJTIwbGVhcm5pbmclMjBuZXVyYWwlMjBuZXR3b3JrJTIwdmlzdWFsaXphdGlvbnxlbnwxfHx8fDE3NzI0MjkyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://demo.com'
+    title: 'NyayaMitra: AI-Powered Legal Assistant',
+    description: 'Modular, multi-agent AI system for Indian legal domain: case retrieval, document summarization, fake news detection, and legal chatbot QA.',
+    technologies: ['PyTorch', 'Hugging Face', 'Milvus', 'FastAPI', 'Streamlit', 'LangChain', 'GCP'],
+    metrics: ['91% factual consistency', '88.4% classification acc', '200K+ cases scraped'],
+    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXd8ZW58MHx8fHwxNzcyNDQ1NTYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    githubUrl: 'https://github.com/srinivastls/NyayaMitra'
   },
   {
-    title: 'Conversational AI Chatbot',
-    description: 'Fine-tuned LLM chatbot for customer support with RAG architecture. Reduced support ticket volume by 40% while maintaining 95% customer satisfaction.',
-    technologies: ['LangChain', 'OpenAI GPT-4', 'Pinecone', 'Python', 'React'],
-    metrics: ['40% ticket reduction', '95% satisfaction', '100K+ conversations'],
-    image: 'https://images.unsplash.com/photo-1760629863094-5b1e8d1aae74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwcm9ib3QlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MjQxMDc1N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    githubUrl: 'https://github.com',
-    liveUrl: 'https://demo.com'
-  },
-  {
-    title: 'Predictive Analytics Dashboard',
-    description: 'Real-time ML pipeline for forecasting business metrics using time series analysis. Achieved 92% prediction accuracy across 50+ KPIs.',
-    technologies: ['TensorFlow', 'Prophet', 'Apache Kafka', 'PostgreSQL', 'D3.js'],
-    metrics: ['92% accuracy', '50+ KPIs tracked', 'Real-time updates'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMGFuYWx5dGljcyUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzI0MjYzNDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    githubUrl: 'https://github.com'
+    title: 'Celebrity Image Recognition',
+    description: 'Developed image recognition system using ML classifiers and PCA for dimensionality reduction. Utilized OpenCV Haar cascades for facial feature detection.',
+    technologies: ['Scikit-learn', 'OpenCV', 'Python', 'PCA'],
+    metrics: ['Dimensionality reduction', 'Haar cascades'],
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbnxlbnwwfHx8fDE3NzI0NDU1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    githubUrl: 'https://github.com/srinivastls/Image_recognition'
   }
 ];
 

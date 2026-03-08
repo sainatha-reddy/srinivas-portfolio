@@ -5,36 +5,24 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    category: 'Machine Learning',
-    skills: ['Deep Learning', 'Neural Networks', 'Transfer Learning', 'Model Optimization', 'Feature Engineering']
-  },
-  {
-    category: 'NLP & LLMs',
-    skills: ['Transformers', 'GPT/BERT', 'LangChain', 'RAG Systems', 'Fine-tuning', 'Prompt Engineering']
-  },
-  {
-    category: 'Computer Vision',
-    skills: ['Object Detection', 'Image Segmentation', 'CNN Architectures', 'GANs', 'OCR']
-  },
-  {
-    category: 'Frameworks & Libraries',
-    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'Hugging Face', 'OpenCV']
-  },
-  {
     category: 'Programming Languages',
-    skills: ['Python', 'JavaScript/TypeScript', 'SQL', 'R', 'C++', 'Java']
+    skills: ['Python', 'C', 'C++', 'HTML', 'CSS', 'TypeScript']
   },
   {
-    category: 'MLOps & Deployment',
-    skills: ['Docker', 'Kubernetes', 'AWS SageMaker', 'MLflow', 'CI/CD', 'Model Monitoring']
+    category: 'AI/ML Frameworks',
+    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Hugging Face']
   },
   {
-    category: 'Data Engineering',
-    skills: ['Apache Spark', 'Airflow', 'Kafka', 'PostgreSQL', 'MongoDB', 'Redis']
+    category: 'Developer Tools',
+    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Jupyter', 'VS Code', 'Docker']
   },
   {
-    category: 'Cloud Platforms',
-    skills: ['AWS', 'Google Cloud', 'Azure', 'Lambda Functions', 'S3', 'EC2']
+    category: 'Databases',
+    skills: ['MySQL', 'Milvus']
+  },
+  {
+    category: 'Soft Skills',
+    skills: ['Communication', 'Problem-solving', 'Teamwork', 'Time Management']
   }
 ];
 

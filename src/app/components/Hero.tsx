@@ -26,7 +26,7 @@ export function Hero() {
               delay={0}
             />
             <TextReveal3D
-              text="Alex Chen"
+              text="Lakshmi Srinivas"
               className="text-5xl md:text-6xl lg:text-7xl mb-6 font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent block"
               delay={3}
             />
@@ -36,9 +36,7 @@ export function Hero() {
             </h2>
 
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              I build intelligent systems that solve real-world problems. Specializing in deep learning,
-              natural language processing, and computer vision with 5+ years of experience deploying
-              production ML models at scale.
+              B.Tech in CSE (AI Major) at IIITDM Kancheepuram. I build intelligent systems that solve real-world problems. Specializing in deep learning, natural language processing, and computer vision with experience in developing production ML models and scalable APIs.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">

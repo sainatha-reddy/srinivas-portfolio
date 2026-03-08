@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Twitter, MapPin, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, Terminal, MapPin, Send } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -21,15 +21,15 @@ export function Contact() {
               Get In Touch
             </h3>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              I'm always interested in hearing about new projects, opportunities, 
-              or just chatting about the latest developments in AI and machine learning. 
+              I'm always interested in hearing about new projects, opportunities,
+              or just chatting about the latest developments in AI and machine learning.
               Feel free to reach out through any of these channels.
             </p>
 
             {/* Contact Methods */}
             <div className="space-y-4">
               <a
-                href="mailto:alex.chen@example.com"
+                href="mailto:lakshmisrinivas365@gmail.com"
                 className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-all group"
               >
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
@@ -37,12 +37,12 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Email</div>
-                  <div className="text-white">alex.chen@example.com</div>
+                  <div className="text-white">lakshmisrinivas365@gmail.com</div>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com/in/alexchen"
+                href="https://www.linkedin.com/in/telaprolu-lakshmi-srinivas-224589212/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-all group"
@@ -52,12 +52,12 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">LinkedIn</div>
-                  <div className="text-white">linkedin.com/in/alexchen</div>
+                  <div className="text-white">telaprolu-lakshmi-srinivas</div>
                 </div>
               </a>
 
               <a
-                href="https://github.com/alexchen"
+                href="https://github.com/srinivastls"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-all group"
@@ -67,22 +67,22 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">GitHub</div>
-                  <div className="text-white">github.com/alexchen</div>
+                  <div className="text-white">github.com/srinivastls</div>
                 </div>
               </a>
 
               <a
-                href="https://twitter.com/alexchen"
+                href="https://www.codechef.com/users/cs21b2045"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-blue-500/50 transition-all group"
               >
                 <div className="p-3 bg-blue-500/10 rounded-lg group-hover:bg-blue-500/20 transition-colors">
-                  <Twitter className="w-5 h-5 text-blue-400" />
+                  <Terminal className="w-5 h-5 text-blue-400" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500">Twitter</div>
-                  <div className="text-white">@alexchen</div>
+                  <div className="text-sm text-gray-500">CodeChef</div>
+                  <div className="text-white">cs21b2045</div>
                 </div>
               </a>
 
@@ -92,7 +92,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500">Location</div>
-                  <div className="text-white">San Francisco, CA</div>
+                  <div className="text-white">Chennai, India</div>
                 </div>
               </div>
             </div>

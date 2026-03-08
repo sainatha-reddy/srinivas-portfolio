@@ -11,42 +11,28 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: 'Senior AI Engineer',
-    company: 'TechCorp AI',
-    period: 'Jan 2023 - Present',
-    location: 'San Francisco, CA',
-    description: 'Leading the development of enterprise AI solutions and managing a team of ML engineers.',
+    title: 'Artificial Intelligence Intern',
+    company: 'Vizzhy Inc (Hanooman.ai)',
+    period: 'May 2024 - October 2024',
+    location: 'Bangalore, India',
+    description: 'Fine-tuned Large Language Models (LLMs) for diverse applications and designed data preprocessing pipelines.',
     achievements: [
-      'Architected and deployed a multi-model NLP pipeline processing 1M+ documents daily',
-      'Reduced model inference latency by 60% through optimization and hardware acceleration',
-      'Mentored 5 junior engineers and established ML best practices across the organization',
-      'Led the migration of legacy ML systems to cloud-native microservices architecture'
+      'Designed data preprocessing pipelines using Selenium and BeautifulSoup for web scraping and content enrichment',
+      'Built REST APIs with FastAPI for user management and data retrieval in the DARPG project',
+      'Enhanced the beta version of the Hanooman.ai interface, improving usability and performance'
     ]
   },
   {
-    title: 'Machine Learning Engineer',
-    company: 'DataFlow Inc',
-    period: 'Mar 2021 - Dec 2022',
-    location: 'New York, NY',
-    description: 'Developed and deployed production ML models for predictive analytics and recommendation systems.',
+    title: 'Teaching Assistant',
+    company: 'IIITDM Kancheepuram',
+    period: '2024 - 2025',
+    location: 'Chennai, India',
+    description: 'Assisted in courses: Computer Organization and Architecture, Data Structures and Algorithms, Digital System Design.',
     achievements: [
-      'Built a recommendation engine that increased user engagement by 35%',
-      'Implemented A/B testing framework for model evaluation and continuous improvement',
-      'Designed data pipelines processing 500GB+ of data daily using Apache Spark',
-      'Collaborated with product teams to translate business requirements into ML solutions'
-    ]
-  },
-  {
-    title: 'Data Scientist',
-    company: 'Analytics Solutions',
-    period: 'Jun 2019 - Feb 2021',
-    location: 'Boston, MA',
-    description: 'Focused on statistical modeling and machine learning for business intelligence applications.',
-    achievements: [
-      'Developed time series forecasting models with 92% accuracy for demand prediction',
-      'Created automated reporting dashboards using Python and Tableau',
-      'Conducted exploratory data analysis to uncover actionable business insights',
-      'Presented findings to C-level executives and stakeholders'
+      'Conducted tutorial sessions and doubt-clearing labs for 100+ students across multiple semesters',
+      'Supported grading of assignments, projects, and exams with detailed feedback',
+      'Created supplemental materials and demonstrations for digital logic, memory hierarchy, and recursion',
+      'Collaborated with faculty in improving course structure and mentorship activities'
     ]
   }
 ];

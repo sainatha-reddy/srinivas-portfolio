@@ -72,6 +72,8 @@
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "pdf-parse": "^2.4.5",
+    "pdfreader": "^3.0.8",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },
