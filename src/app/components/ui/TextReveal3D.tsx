@@ -46,7 +46,7 @@ export function TextReveal3D({ text, className = '', delay = 0 }: TextReveal3DPr
 
     return (
         <motion.div
-            style={{ overflow: 'hidden', display: 'flex', flexWrap: 'wrap', perspective: '1000px' }}
+            style={{ display: 'flex', flexWrap: 'wrap', perspective: '1000px' }}
             variants={container}
             initial="hidden"
             whileInView="visible"
@@ -54,12 +54,12 @@ export function TextReveal3D({ text, className = '', delay = 0 }: TextReveal3DPr
             className={className}
         >
             {words.map((word, wordIndex) => (
-                <span key={wordIndex} style={{ marginRight: '0.25em', display: 'inline-flex' }}>
+                <span key={wordIndex} style={{ marginRight: '0.25em', display: 'inline-flex', whiteSpace: 'nowrap' }}>
                     {Array.from(word).map((letter, index) => (
                         <motion.span
                             key={`${wordIndex}-${index}`}
                             variants={child}
-                            style={{ display: 'inline-block', transformOrigin: '50% 100% -50px' }}
+                            style={{ display: 'inline-block', transformOrigin: '50% 100% -50px', whiteSpace: 'pre' }}
                         >
                             {letter}
                         </motion.span>
