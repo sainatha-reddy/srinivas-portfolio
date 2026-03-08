@@ -14,7 +14,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Developer Tools',
-    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Jupyter', 'VS Code', 'Docker']
+    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Jupyter', 'VS Code', 'Docker', 'DevOps']
   },
   {
     category: 'Databases',

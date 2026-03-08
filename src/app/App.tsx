@@ -1,8 +1,10 @@
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
+import { OpenSource } from './components/OpenSource';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
+import { Achievements } from './components/Achievements';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ReactLenis } from '@studio-freight/react-lenis';
@@ -38,8 +40,10 @@ export default function App() {
           <Navigation />
           <Hero />
           <Projects />
+          <OpenSource />
           <Skills />
           <Experience />
+          <Achievements />
 
           {/* Interactive Physics Playground */}
           <section className="h-[60vh] w-full relative border-y border-gray-800 bg-gray-950/80 backdrop-blur-sm">
@@ -58,7 +62,7 @@ export default function App() {
           </section>
 
           <Contact />
-          <Footer />
+          
         </div>
       </div>
     </ReactLenis>

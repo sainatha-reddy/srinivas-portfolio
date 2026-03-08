@@ -24,16 +24,17 @@ export function Navigation() {
   const navItems = [
     { label: 'About', id: 'about' },
     { label: 'Projects', id: 'projects' },
+    { label: 'Open Source', id: 'opensource' },
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
+    { label: 'Achievements', id: 'achievements' },
     { label: 'Contact', id: 'contact' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

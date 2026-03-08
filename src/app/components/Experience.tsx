@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, Github } from 'lucide-react';
 
 interface ExperienceItem {
   title: string;
@@ -7,9 +7,22 @@ interface ExperienceItem {
   location: string;
   description: string;
   achievements: string[];
+  githubUrl?: string;
 }
 
 const experiences: ExperienceItem[] = [
+  {
+    title: 'Advanced App Engineering Analyst',
+    company: 'Accenture',
+    period: 'Current',
+    location: 'Hyderabad, India',
+    description: 'Specializing in DevOps, automation workflows, and generative AI initiatives.',
+    achievements: [
+      'Engineered automated deployment pipelines and optimized infrastructure workflows',
+      'Developed and integrated Generative AI solutions for enterprise applications',
+      'Lead Project AADIS to automate and scale advanced analytic deployments'
+    ]
+  },
   {
     title: 'Artificial Intelligence Intern',
     company: 'Vizzhy Inc (Hanooman.ai)',
@@ -91,7 +104,7 @@ export function Experience() {
                   </p>
 
                   {/* Achievements */}
-                  <div>
+                  <div className={exp.githubUrl ? "mb-6" : ""}>
                     <h4 className="text-sm text-gray-500 uppercase tracking-wider mb-3">
                       Key Achievements
                     </h4>
@@ -104,6 +117,21 @@ export function Experience() {
                       ))}
                     </ul>
                   </div>
+
+                  {/* Optional GitHub Link */}
+                  {exp.githubUrl && (
+                    <div className="pt-4 border-t border-gray-800">
+                      <a
+                        href={exp.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors"
+                      >
+                        <Github className="w-4 h-4" />
+                        <span className="text-sm">Project Repo</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
