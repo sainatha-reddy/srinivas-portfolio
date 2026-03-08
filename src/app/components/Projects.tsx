@@ -1,0 +1,134 @@
+import { ExternalLink, Github } from 'lucide-react';
+import { TiltCard } from './ui/TiltCard';
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  metrics: string[];
+  image: string;
+  githubUrl: string;
+  liveUrl?: string;
+}
+
+const projects: Project[] = [
+  {
+    title: 'Neural Style Transfer API',
+    description: 'Production-ready REST API that applies artistic styles to images using deep learning. Processes 10,000+ images daily with 99.9% uptime.',
+    technologies: ['PyTorch', 'FastAPI', 'Docker', 'AWS Lambda', 'S3'],
+    metrics: ['10K+ daily requests', '99.9% uptime', '2.5s avg latency'],
+    image: 'https://images.unsplash.com/photo-1678845536613-5cf0ec5245cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWNoaW5lJTIwbGVhcm5pbmclMjBuZXVyYWwlMjBuZXR3b3JrJTIwdmlzdWFsaXphdGlvbnxlbnwxfHx8fDE3NzI0MjkyNjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://demo.com'
+  },
+  {
+    title: 'Conversational AI Chatbot',
+    description: 'Fine-tuned LLM chatbot for customer support with RAG architecture. Reduced support ticket volume by 40% while maintaining 95% customer satisfaction.',
+    technologies: ['LangChain', 'OpenAI GPT-4', 'Pinecone', 'Python', 'React'],
+    metrics: ['40% ticket reduction', '95% satisfaction', '100K+ conversations'],
+    image: 'https://images.unsplash.com/photo-1760629863094-5b1e8d1aae74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlJTIwcm9ib3QlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc3MjQxMDc1N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    githubUrl: 'https://github.com',
+    liveUrl: 'https://demo.com'
+  },
+  {
+    title: 'Predictive Analytics Dashboard',
+    description: 'Real-time ML pipeline for forecasting business metrics using time series analysis. Achieved 92% prediction accuracy across 50+ KPIs.',
+    technologies: ['TensorFlow', 'Prophet', 'Apache Kafka', 'PostgreSQL', 'D3.js'],
+    metrics: ['92% accuracy', '50+ KPIs tracked', 'Real-time updates'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc2NpZW5jZSUyMGFuYWx5dGljcyUyMGRhc2hib2FyZHxlbnwxfHx8fDE3NzI0MjYzNDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    githubUrl: 'https://github.com'
+  }
+];
+
+export function Projects() {
+  return (
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Showcasing impactful AI/ML solutions that drive real business value
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <TiltCard key={index} className="h-full">
+              <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 group h-full flex flex-col">
+                {/* Project Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+                </div>
+
+                {/* Project Content */}
+                <div className="p-6">
+                  <h3 className="text-xl mb-3 text-white group-hover:text-blue-400 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="mb-4 space-y-2">
+                    {project.metrics.map((metric, metricIndex) => (
+                      <div key={metricIndex} className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                        <span className="text-sm text-gray-400">{metric}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex gap-3 pt-4 border-t border-gray-800">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors flex-1 justify-center"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span className="text-sm">Code</span>
+                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex-1 justify-center"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span className="text-sm">Live Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </TiltCard>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
