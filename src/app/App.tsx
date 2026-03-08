@@ -45,21 +45,7 @@ export default function App() {
           <Experience />
           <Achievements />
 
-          {/* Interactive Physics Playground */}
-          <section className="h-[60vh] w-full relative border-y border-gray-800 bg-gray-950/80 backdrop-blur-sm">
-            <div className="absolute inset-x-0 top-8 text-center z-10 pointer-events-none">
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Interactive Playground
-              </h2>
-              <p className="text-gray-400 mt-2">Throw the physics objects around!</p>
-            </div>
-            {/* Z-index allows pointer events here */}
-            <div className="w-full h-full relative z-20">
-              <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-                <Ballpit />
-              </Canvas>
-            </div>
-          </section>
+          
 
           <Contact />
           
