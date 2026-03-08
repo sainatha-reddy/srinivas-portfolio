@@ -9,12 +9,12 @@ const skillCategories: SkillCategory[] = [
     skills: ['Python', 'C', 'C++', 'HTML', 'CSS', 'TypeScript']
   },
   {
-    category: 'AI/ML Frameworks',
-    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Hugging Face']
+    category: 'AI/ML Frameworks & Concepts',
+    skills: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Hugging Face', 'LLM Engineering', 'RAG']
   },
   {
-    category: 'Developer Tools',
-    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Jupyter', 'VS Code', 'Docker', 'DevOps']
+    category: 'Developer Tools & DevOps',
+    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Jupyter', 'DevOps', 'Docker', 'CI/CD pipelines', 'Cloud Infrastructure']
   },
   {
     category: 'Databases',

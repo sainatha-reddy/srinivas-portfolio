@@ -13,6 +13,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'AADIS: Advanced Agentic Document Intelligence System',
+    description: 'A sophisticated multi-agent system designed to automate deep document understanding and intelligent information retrieval. Features intelligent document decomposition and agentic QA.',
+    technologies: ['Python', 'Multi-Agent Systems', 'LLMs', 'RAG'],
+    metrics: ['Multi-Agent Architecture', 'Automated Decomposition', 'Agentic QA'],
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    githubUrl: 'https://github.com/srinivastls/AADIS'
+  },
+  {
     title: 'NyayaMitra: AI-Powered Legal Assistant',
     description: 'Modular, multi-agent AI system for Indian legal domain: case retrieval, document summarization, fake news detection, and legal chatbot QA.',
     technologies: ['PyTorch', 'Hugging Face', 'Milvus', 'FastAPI', 'Streamlit', 'LangChain', 'GCP'],

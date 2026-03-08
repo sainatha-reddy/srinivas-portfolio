@@ -36,7 +36,7 @@ export function Hero() {
             </h2>
 
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              B.Tech in CSE (AI Major) at IIITDM Kancheepuram. I build intelligent systems that solve real-world problems. Specializing in deep learning, natural language processing, and computer vision with experience in developing production ML models and scalable APIs.
+              B.Tech in CSE (AI Major) at IIITDM Kancheepuram. GATE AIR 253 (Data Science & AI). Advanced App Engineering Analyst at Accenture. I build intelligent systems that solve real-world problems. Specializing in deep learning, natural language processing, and computer vision with experience in developing production ML models and scalable APIs.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -57,31 +57,31 @@ export function Hero() {
             {/* Social Links */}
             <div className="flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/srinivastls"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors pointer-events-auto"
               >
                 <Github className="w-5 h-5 text-gray-300" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/telaprolu-lakshmi-srinivas-224589212/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors pointer-events-auto"
               >
                 <Linkedin className="w-5 h-5 text-gray-300" />
               </a>
               <a
-                href="mailto:alex.chen@example.com"
-                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
+                href="mailto:lakshmisrinivas365@gmail.com"
+                className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors pointer-events-auto"
               >
                 <Mail className="w-5 h-5 text-gray-300" />
               </a>
-              <button className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2">
+              <a href="/Resume.pdf" download className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2 pointer-events-auto">
                 <Download className="w-5 h-5 text-gray-300" />
                 <span className="text-sm text-gray-300">Resume</span>
-              </button>
+              </a>
             </div>
           </div>
 

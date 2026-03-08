@@ -1,4 +1,4 @@
-import { Award, Users, Star } from 'lucide-react';
+import { Award, Users, Star, Code } from 'lucide-react';
 
 export function Achievements() {
     const achievements = [
@@ -25,8 +25,16 @@ export function Achievements() {
         {
             title: 'Head Core',
             organization: 'Developers Club IIITDM (2024–25)',
-            icon: <Award className="w-6 h-6 text-blue-400" />,
-            description: 'Organized major technical events including Vashisht Hackathon and Vashisht Hackathon 2.0.'
+            icon: <Code className="w-6 h-6 text-blue-400" />,
+            description: 'Organized major technical events including Vashisht Hackathons and led development of the club website.',
+            link: 'https://devclub.iiitdm.ac.in/'
+        },
+        {
+            title: 'Website Developer',
+            organization: 'Computer Science & Engineering Dept',
+            icon: <Code className="w-6 h-6 text-indigo-400" />,
+            description: 'Designed and deployed the official website for the CSE Department at IIITDM.',
+            link: 'https://cse.iiitdm.ac.in/'
         },
         {
             title: 'Core Member',

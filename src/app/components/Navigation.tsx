@@ -27,6 +27,7 @@ export function Navigation() {
     { label: 'Open Source', id: 'opensource' },
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
+    { label: 'Education', id: 'education' },
     { label: 'Achievements', id: 'achievements' },
     { label: 'Contact', id: 'contact' },
   ];

@@ -12,12 +12,6 @@ interface OpenSourceProject {
 
 const openSourceProjects: OpenSourceProject[] = [
     {
-        title: 'AADIS (Advanced Agentic Document Intelligence System)',
-        description: 'A sophisticated multi-agent system designed to automate deep document understanding and intelligent information retrieval. Features intelligent document decomposition and agentic QA.',
-        technologies: ['Python', 'Multi-Agent Systems', 'LLMs', 'RAG'],
-        githubUrl: 'https://github.com/srinivastls/AADIS',
-    },
-    {
         title: 'cp_snippets',
         description: 'Small, fast, and reusable competitive programming snippets for Python. Built for GATE / ICPC / Codeforces / LeetCode preparation.',
         technologies: ['Python', 'Competitive Programming', 'Algorithms', 'Data Structures'],
