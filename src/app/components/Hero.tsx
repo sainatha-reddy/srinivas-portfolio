@@ -15,7 +15,7 @@ export function Hero() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="order-2 md:order-1 pt-8 md:pt-0">
+          <div className="order-1 md:order-1 pt-8 md:pt-0">
             <div className="inline-block mb-4 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full">
               <span className="text-blue-400">👋 Welcome to my portfolio</span>
             </div>
@@ -86,7 +86,7 @@ Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI M
           </div>
 
           {/* Right Column - Image */}
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+          <div className="order-2 md:order-2 flex justify-center md:justify-end">
             <div className="relative w-full aspect-[3/4] max-w-[450px]">
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
