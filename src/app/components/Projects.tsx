@@ -116,7 +116,7 @@ export function Projects() {
                         {project.metrics.map((metric, metricIndex) => (
                           <div key={metricIndex} className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                            <span className="text-sm text-gray-400 truncate">{metric}</span>
+                            <span className="text-sm text-gray-400">{metric}</span>
                           </div>
                         ))}
                       </div>
