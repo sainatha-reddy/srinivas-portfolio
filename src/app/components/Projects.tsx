@@ -1,5 +1,10 @@
+import React, { useLayoutEffect, useRef } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import { TiltCard } from './ui/TiltCard';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   title: string;
@@ -55,26 +60,58 @@ const projects: Project[] = [
 ];
 
 export function Projects() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const section = sectionRef.current;
+      const trigger = triggerRef.current;
+
+      if (!section || !trigger) return;
+
+      const totalWidth = section.scrollWidth;
+      const amountToScroll = totalWidth - window.innerWidth;
+
+      gsap.to(section, {
+        x: -amountToScroll,
+        ease: "none",
+        scrollTrigger: {
+          trigger: trigger,
+          start: "top top",
+          end: () => `+=${amountToScroll}`,
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" ref={triggerRef} className="py-20 overflow-hidden bg-gray-950/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center">
           <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             Featured Projects
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Showcasing impactful AI/ML solutions that drive real business value
+            Scroll down to explore my work horizontally
           </p>
         </div>
+      </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <TiltCard key={index} className="h-full">
+      {/* Projects Horizontal Container */}
+      <div className="flex gap-8 px-[10vw]" ref={sectionRef} style={{ width: 'max-content' }}>
+        {projects.map((project, index) => (
+          <div key={index} className="w-[350px] md:w-[450px] flex-shrink-0">
+            <TiltCard className="h-full">
               <div className="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 group h-full flex flex-col">
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -85,16 +122,16 @@ export function Projects() {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl mb-3 text-white group-hover:text-blue-400 transition-colors">
+                <div className="p-8">
+                  <h3 className="text-2xl mb-4 text-white group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4 leading-relaxed">
+                  <p className="text-gray-400 mb-6 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -106,43 +143,43 @@ export function Projects() {
                   </div>
 
                   {/* Metrics */}
-                  <div className="mb-4 space-y-2">
+                  <div className="mb-6 space-y-2">
                     {project.metrics.map((metric, metricIndex) => (
                       <div key={metricIndex} className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                        <span className="text-sm text-gray-400">{metric}</span>
+                        <span className="text-sm text-gray-400 font-medium">{metric}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Links */}
-                  <div className="flex gap-3 pt-4 border-t border-gray-800 mt-auto">
+                  <div className="flex gap-4 pt-6 border-t border-gray-800 mt-auto">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors flex-1 justify-center"
+                      className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors flex-1 justify-center group/btn"
                     >
-                      <Github className="w-4 h-4" />
-                      <span className="text-sm">Code</span>
+                      <Github className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+                      <span className="text-sm font-semibold">Code</span>
                     </a>
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex-1 justify-center"
+                        className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex-1 justify-center group/btn"
                       >
-                        <ExternalLink className="w-4 h-4" />
-                        <span className="text-sm">Live Demo</span>
+                        <ExternalLink className="w-4 h-4 group-hover/btn:scale-110 transition-transform" />
+                        <span className="text-sm font-semibold">Live Demo</span>
                       </a>
                     )}
                   </div>
                 </div>
               </div>
             </TiltCard>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

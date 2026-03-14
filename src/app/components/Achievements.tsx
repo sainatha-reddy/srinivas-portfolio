@@ -1,6 +1,41 @@
+import React, { useLayoutEffect, useRef } from 'react';
 import { Award, Users, Star, Code } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Achievements() {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const triggerRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const section = sectionRef.current;
+            const trigger = triggerRef.current;
+
+            if (!section || !trigger) return;
+
+            const totalWidth = section.scrollWidth;
+            const amountToScroll = totalWidth - window.innerWidth;
+
+            gsap.to(section, {
+                x: -amountToScroll,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: trigger,
+                    start: "top top",
+                    end: () => `+=${amountToScroll}`,
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                }
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
+
     const achievements = [
         {
             title: 'Research Paper Published',
@@ -45,9 +80,9 @@ export function Achievements() {
     ];
 
     return (
-        <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/10 border-t border-gray-800">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-16">
+        <section id="achievements" ref={triggerRef} className="py-20 overflow-hidden bg-gray-950 border-t border-gray-800 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+                <div className="text-center">
                     <h2 className="text-4xl md:text-5xl mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                         Responsibilities & Achievements
                     </h2>
@@ -55,45 +90,45 @@ export function Achievements() {
                         Leadership roles and community contributions
                     </p>
                 </div>
+            </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {achievements.map((item, index) => {
-                        const CardContent = (
-                            <>
-                                <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">
-                                    {item.title}
-                                </h3>
-                                <div className="text-blue-400 text-sm font-medium mb-4">
-                                    {item.organization}
-                                </div>
-                                <p className="text-gray-400 text-sm leading-relaxed">
-                                    {item.description}
-                                </p>
-                            </>
-                        );
-
-                        const cardClasses = "bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 block h-full";
-
-                        return item.link ? (
-                            <a
-                                key={index}
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={cardClasses}
-                            >
-                                {CardContent}
-                            </a>
-                        ) : (
-                            <div key={index} className={cardClasses}>
-                                {CardContent}
+            <div className="flex gap-8 px-[10vw]" ref={sectionRef} style={{ width: 'max-content' }}>
+                {achievements.map((item, index) => {
+                    const CardContent = (
+                        <div className="flex flex-col h-full">
+                            <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 flex-shrink-0">
+                                {item.icon}
                             </div>
-                        );
-                    })}
-                </div>
+                            <h3 className="text-xl font-semibold text-white mb-2 leading-snug">
+                                {item.title}
+                            </h3>
+                            <div className="text-blue-400 text-sm font-medium mb-4">
+                                {item.organization}
+                            </div>
+                            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                                {item.description}
+                            </p>
+                        </div>
+                    );
+
+                    const cardClasses = "bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 block h-full w-[300px] md:w-[400px] flex-shrink-0";
+
+                    return item.link ? (
+                        <a
+                            key={index}
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cardClasses}
+                        >
+                            {CardContent}
+                        </a>
+                    ) : (
+                        <div key={index} className={cardClasses}>
+                            {CardContent}
+                        </div>
+                    );
+                })}
             </div>
         </section>
     );
