@@ -95,7 +95,7 @@ Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI M
               <div className="relative z-10 w-full h-full p-4">
                 <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 backdrop-blur-sm bg-white/5 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
                   <img 
-                    src="/src/public/Image.jpeg" 
+                    src="./Image.jpeg" 
                     alt="Lakshmi Srinivas" 
                     className="w-full h-full object-cover"
                   />
