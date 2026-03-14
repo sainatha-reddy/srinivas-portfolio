@@ -86,7 +86,7 @@ Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI M
           </div>
 
           {/* Right Column - Image */}
-          <div className="order-1 md:order-2 flex justify-center md:justify-end -mr-10 md:-mr-16 lg:-mr-24">
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
             <div className="relative w-full aspect-[3/4] max-w-[450px]">
               {/* Gradient Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
