@@ -78,7 +78,7 @@ Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI M
               >
                 <Mail className="w-5 h-5 text-gray-300" />
               </a>
-              <a href="/Resume.pdf" download className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2 pointer-events-auto">
+              <a href="Resume.pdf" download="Lakshmi_Srinivas_Resume.pdf" className="p-3 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors flex items-center gap-2 pointer-events-auto">
                 <Download className="w-5 h-5 text-gray-300" />
                 <span className="text-sm text-gray-300">Resume</span>
               </a>
@@ -97,6 +97,7 @@ Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI M
                   <img 
                     src="Image.jpeg" 
                     alt="Lakshmi Srinivas" 
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                   {/* Overlay Gradient */}
