@@ -32,11 +32,11 @@ export function Hero() {
             />
 
             <h2 className="text-2xl md:text-3xl text-gray-300 mb-6">
-              AI Engineer & Machine Learning Specialist
+              Advanced Application Engineering Analyst
             </h2>
 
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              B.Tech in CSE (AI Major) at IIITDM Kancheepuram. GATE AIR 253 (Data Science & AI). Advanced App Engineering Analyst at Accenture. I build intelligent systems that solve real-world problems. Specializing in deep learning, natural language processing, and computer vision with experience in developing production ML models and scalable APIs.
+Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI Major) at IIITDM Kancheepuram. Secured GATE AIR 253 in Data Science & Artificial Intelligence. I focus on building intelligent systems that address real-world problems, with specialization in deep learning, natural language processing, and computer vision. Experienced in developing production-ready machine learning models and scalable APIs.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
@@ -85,22 +85,29 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Image / 3D Model */}
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
-            <div className="relative w-full aspect-square max-w-[500px]">
+          {/* Right Column - Image */}
+          <div className="order-1 md:order-2 flex justify-center md:justify-end translate-x-0 md:translate-x-20 lg:translate-x-30 transition-transform duration-500">
+            <div className="relative w-full aspect-[3/4] max-w-[500px]">
               {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse"></div>
 
-              {/* 3D Model Viewer Canvas */}
-              <div className="absolute inset-0 z-10">
-                <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
-                  <ModelViewer />
-                </Canvas>
+              {/* Main Image Container */}
+              <div className="relative z-10 w-full h-full p-4">
+                <div className="w-full h-full rounded-2xl overflow-hidden border-2 border-white/10 backdrop-blur-sm bg-white/5 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                  <img 
+                    src="/src/public/Image.jpeg" 
+                    alt="Lakshmi Srinivas" 
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/40 to-transparent"></div>
+                </div>
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
+     
     </section>
   );
 }

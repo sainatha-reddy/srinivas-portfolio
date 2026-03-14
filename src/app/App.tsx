@@ -1,7 +1,6 @@
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
-import { OpenSource } from './components/OpenSource';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
 import { Education } from './components/Education';
@@ -11,8 +10,6 @@ import { Footer } from './components/Footer';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { Canvas } from '@react-three/fiber';
 import { AntigravityParticles } from './components/3d/AntigravityParticles';
-import { AsciiText } from './components/3d/AsciiText';
-import { Ballpit } from './components/3d/Ballpit';
 import { Prism } from './components/3d/Prism';
 
 export default function App() {
@@ -41,7 +38,6 @@ export default function App() {
           <Navigation />
           <Hero />
           <Projects />
-          <OpenSource />
           <Skills />
           <Experience />
           <Education />

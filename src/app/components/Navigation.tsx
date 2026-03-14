@@ -24,7 +24,6 @@ export function Navigation() {
   const navItems = [
     { label: 'About', id: 'about' },
     { label: 'Projects', id: 'projects' },
-    { label: 'Open Source', id: 'opensource' },
     { label: 'Skills', id: 'skills' },
     { label: 'Experience', id: 'experience' },
     { label: 'Education', id: 'education' },
@@ -44,7 +43,7 @@ export function Navigation() {
             onClick={() => scrollToSection('about')}
             className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            AI Engineer
+           
           </button>
 
           {/* Desktop Navigation */}
