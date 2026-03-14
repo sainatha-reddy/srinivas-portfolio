@@ -15,7 +15,7 @@ import { Prism } from './components/3d/Prism';
 export default function App() {
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white relative">
+      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white relative overflow-x-hidden">
 
         {/* Fixed 3D Background */}
         <div className="fixed inset-0 z-0 pointer-events-none opacity-50">

@@ -9,7 +9,7 @@ export function Footer() {
             Built with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> and code
           </p>
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Alex Chen. All rights reserved.
+            © {new Date().getFullYear()} Lakshmi Srinivas. All rights reserved.
           </p>
         </div>
       </div>
