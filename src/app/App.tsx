@@ -1,33 +1,25 @@
-import React, { Suspense, lazy, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
+import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
+import { Skills } from './components/Skills';
+import { Experience } from './components/Experience';
+import { Education } from './components/Education';
+import { Achievements } from './components/Achievements';
+import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { Canvas } from '@react-three/fiber';
 import { AntigravityParticles } from './components/3d/AntigravityParticles';
 import { Prism } from './components/3d/Prism';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Lazy load components
-const Hero = lazy(() => import('./components/Hero').then(module => ({ default: module.Hero })));
-const Projects = lazy(() => import('./components/Projects').then(module => ({ default: module.Projects })));
-const Skills = lazy(() => import('./components/Skills').then(module => ({ default: module.Skills })));
-const Experience = lazy(() => import('./components/Experience').then(module => ({ default: module.Experience })));
-const Education = lazy(() => import('./components/Education').then(module => ({ default: module.Education })));
-const Achievements = lazy(() => import('./components/Achievements').then(module => ({ default: module.Achievements })));
-const Contact = lazy(() => import('./components/Contact').then(module => ({ default: module.Contact })));
-const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
-
-const LoadingSection = () => (
-  <div className="h-screen flex items-center justify-center bg-gray-950">
-    <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
-
 export default function App() {
   useEffect(() => {
-    // Refresh ScrollTrigger after a slight delay to allow lazy components to fully render
+    // Refresh ScrollTrigger to ensure all positions are calculated correctly
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -51,16 +43,14 @@ export default function App() {
         {/* Content */}
         <div className="relative z-10">
           <Navigation />
-          <Suspense fallback={<LoadingSection />}>
-            <Hero />
-            <Projects />
-            <Skills />
-            <Experience />
-            <Education />
-            <Achievements />
-            <Contact />
-            <Footer />
-          </Suspense>
+          <Hero />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Education />
+          <Achievements />
+          <Contact />
+          <Footer />
         </div>
       </div>
     </ReactLenis>
