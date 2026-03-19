@@ -34,7 +34,7 @@ const skillCategories: SkillCategory[] = [
   },
   {
     category: 'Tools & DevOps',
-    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Docker', 'CI/CD', 'Cloud Infra', 'Jupyter'],
+    skills: ['FastAPI', 'OpenCV', 'Selenium', 'Git', 'Docker', 'CI/CD', 'Cloud Infra', 'Jupyter', 'Terraform'],
     color: 'from-orange-500 to-yellow-400',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,29 +71,6 @@ export function Skills() {
         ease: "sine.inOut"
       });
 
-      // Hover effect for cards
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
-        
-        card.addEventListener('mouseenter', () => {
-          gsap.to(card, {
-            y: -10,
-            scale: 1.02,
-            boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-            duration: 0.3
-          });
-        });
-
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card, {
-            y: 0,
-            scale: 1,
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-            duration: 0.3
-          });
-        });
-      });
-
       // Reveal animation
       const cards = cardsRef.current.filter(Boolean);
       if (cards.length > 0) {
@@ -104,9 +81,10 @@ export function Skills() {
             toggleActions: "play none none none"
           },
           y: 30,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "power2.out"
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.7)"
         });
       }
     }, triggerRef);
@@ -136,33 +114,81 @@ export function Skills() {
           </p>
         </div>
 
+        {/* Background Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none z-0">
+          <span className="text-[15rem] md:text-[25rem] font-bold text-white/[0.02] leading-none uppercase tracking-tighter">
+            Expertise
+          </span>
+        </div>
+
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
           {skillCategories.map((category, index) => (
             <div
               key={index}
               ref={(el) => { cardsRef.current[index] = el; }}
-              className="skill-card group relative bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 transition-all duration-500 hover:border-white/[0.2] overflow-hidden"
+              onMouseMove={(e) => {
+                const card = cardsRef.current[index];
+                if (!card) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * 10;
+                const rotateY = ((centerX - x) / centerX) * 10;
+                
+                gsap.to(card, {
+                  rotateX,
+                  rotateY,
+                  scale: 1.05,
+                  y: -10,
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                  duration: 0.5,
+                  ease: "power2.out"
+                });
+              }}
+              onMouseLeave={() => {
+                const card = cardsRef.current[index];
+                if (!card) return;
+                gsap.to(card, {
+                  rotateX: 0,
+                  rotateY: 0,
+                  scale: 1,
+                  y: 0,
+                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                  duration: 0.5,
+                  ease: "power2.out"
+                });
+              }}
+              className="skill-card group relative bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 transition-all duration-300 hover:border-white/[0.15] overflow-hidden"
+              style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
             >
+              {/* Animated Border Beam */}
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}>
+                <div className={`absolute inset-[-2px] bg-gradient-to-r ${category.color} blur-sm`}></div>
+                <div className="absolute inset-[1px] bg-gray-950 rounded-[15px]"></div>
+              </div>
+
               {/* Card Background Glow */}
-              <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-full blur-3xl`}></div>
+              <div className={`absolute -top-24 -right-24 w-48 h-48 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-full blur-3xl`}></div>
               
               {/* Category Icon & Title */}
-              <div className="relative z-10">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+              <div className="relative z-10" style={{ transform: 'translateZ(20px)' }}>
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 text-white shadow-xl group-hover:shadow-${category.color.split(' ')[0].replace('from-', '')}/20 transition-all duration-500 animate-float`}>
                   {category.icon}
                 </div>
                 
-                <h3 className="text-xl font-semibold text-white mb-6 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text transition-all">
+                <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 group-hover:bg-clip-text transition-all tracking-tight">
                   {category.category}
                 </h3>
 
                 {/* Skills Chips */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1 text-xs font-medium text-gray-300 bg-white/[0.05] border border-white/[0.1] rounded-full hover:bg-white/[0.1] hover:border-white/[0.2] hover:text-white transition-all cursor-default"
+                      className="px-3.5 py-1.5 text-xs font-semibold text-gray-400 bg-white/[0.03] border border-white/[0.05] rounded-lg hover:bg-white/[0.1] hover:border-white/[0.2] hover:text-white transition-all cursor-default transform hover:-translate-y-0.5"
                     >
                       {skill}
                     </span>
@@ -171,7 +197,7 @@ export function Skills() {
               </div>
               
               {/* Hover Indicator Line */}
-              <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${category.color} group-hover:w-full transition-all duration-500`}></div>
+              <div className={`absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r ${category.color} group-hover:w-full transition-all duration-700 ease-in-out`}></div>
             </div>
           ))}
         </div>
@@ -187,11 +213,18 @@ export function Skills() {
       <style>{`
         .skill-card {
           box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                      box-shadow 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                      border-color 0.3s ease;
         }
         
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+
         @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+          0%, 100% { transform: translateY(0) translateZ(20px); }
+          50% { transform: translateY(-10px) translateZ(20px); }
         }
       `}</style>
     </section>

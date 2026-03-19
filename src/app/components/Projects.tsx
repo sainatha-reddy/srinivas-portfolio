@@ -22,7 +22,7 @@ const projects: Project[] = [
     description: 'A sophisticated multi-agent system designed to automate deep document understanding and intelligent information retrieval. Features intelligent document decomposition and agentic QA.',
     technologies: ['Python', 'Multi-Agent Systems', 'LLMs', 'RAG'],
     metrics: ['Multi-Agent Architecture', 'Automated Decomposition', 'Agentic QA'],
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/AADIS.png',
     githubUrl: 'https://github.com/srinivastls/AADIS'
   },
   {
@@ -30,7 +30,7 @@ const projects: Project[] = [
     description: 'Modular, multi-agent AI system for Indian legal domain: case retrieval, document summarization, fake news detection, and legal chatbot QA.',
     technologies: ['PyTorch', 'Hugging Face', 'Milvus', 'FastAPI', 'Streamlit', 'LangChain', 'GCP'],
     metrics: ['91% factual consistency', '88.4% classification acc', '200K+ cases scraped'],
-    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXd8ZW58MHx8fHwxNzcyNDQ1NTYxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/NyayaMitra.png',
     githubUrl: 'https://github.com/srinivastls/NyayaMitra'
   },
   {
@@ -38,7 +38,7 @@ const projects: Project[] = [
     description: 'Developed image recognition system using ML classifiers and PCA for dimensionality reduction. Utilized OpenCV Haar cascades for facial feature detection.',
     technologies: ['Scikit-learn', 'OpenCV', 'Python', 'PCA'],
     metrics: ['Dimensionality reduction', 'Haar cascades'],
-    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHZpc2lvbnxlbnwwfHx8fDE3NzI0NDU1OTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: '/celebrity.png',
     githubUrl: 'https://github.com/srinivastls/Image_recognition'
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
     description: 'Small, fast, and reusable competitive programming snippets for Python. Built for GATE / ICPC / Codeforces / LeetCode preparation.',
     technologies: ['Python', 'Competitive Programming', 'Algorithms', 'Data Structures'],
     metrics: ['Snippets', 'Competitive Programming'],
-    image: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/cp_snippets.png',
     githubUrl: 'https://github.com/srinivastls/cp_snippets'
   },
   {
@@ -54,7 +54,7 @@ const projects: Project[] = [
     description: 'An open source repository focusing on legal frameworks or data.',
     technologies: ['Python', 'Data Analytics'],
     metrics: ['Legal Frameworks', 'Data Analytics'],
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: '/91-crpc.png',
     githubUrl: 'https://github.com/srinivastls/91-crpc'
   }
 ];
@@ -104,7 +104,6 @@ export function Projects() {
         </div>
       </div>
 
-      {/* Projects Horizontal Container */}
       {/* Projects Horizontal Container */}
       <div className="flex gap-4 md:gap-6 px-[5vw] md:px-[10vw]" ref={sectionRef} style={{ width: 'max-content' }}>
         {projects.map((project, index) => (
