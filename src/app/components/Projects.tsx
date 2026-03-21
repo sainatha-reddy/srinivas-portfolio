@@ -91,7 +91,7 @@ export function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={triggerRef} className="py-20 overflow-hidden bg-gray-950/20">
+    <section id="projects" ref={triggerRef} className="pt-24 pb-12 overflow-hidden bg-gray-950/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         {/* Section Header */}
         <div className="text-center">

@@ -119,7 +119,7 @@ export function Education() {
   };
 
   return (
-    <section id="education" ref={containerRef} className="py-16 relative overflow-hidden bg-gray-950">
+    <section id="education" ref={containerRef} className="py-12 relative overflow-hidden bg-gray-950/20">
       {/* Decorative Blur */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
@@ -192,7 +192,7 @@ export function Education() {
         .scrollbar-none::-webkit-scrollbar {
           display: none;
         }
-        section {
+        #education {
           perspective: 1000px;
         }
       `}</style>

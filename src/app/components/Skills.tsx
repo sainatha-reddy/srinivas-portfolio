@@ -93,7 +93,7 @@ export function Skills() {
   }, []);
 
   return (
-    <section id="skills" ref={triggerRef} className="py-24 relative overflow-hidden bg-gray-950">
+    <section id="skills" ref={triggerRef} className="py-12 relative overflow-hidden bg-gray-950/20">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="skill-blob absolute top-[10%] left-[5%] w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]"></div>

@@ -93,14 +93,14 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="relative pt-12 pb-4 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#030712]">
+    <section id="contact" ref={sectionRef} className="relative pt-8 pb-2 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gray-950/20">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="blob-1 absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full"></div>
         <div className="blob-2 absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10 pb-12">
         {/* Section Header */}
         <div className="contact-header text-center mb-8">
           <h2 className="text-5xl md:text-6xl font-black mb-4 tracking-tight">
@@ -108,7 +108,7 @@ export function Contact() {
               Let's Create Together
             </span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             Have a project in mind or just want to chat about the future of AI? 
             I'm always open to new opportunities and interesting conversations.
           </p>
@@ -176,7 +176,7 @@ export function Contact() {
         </form>
 
         {/* Contact Cards Row */}
-        <div ref={infoRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        {/* <div ref={infoRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
           {[
             { 
               icon: Mail, 
@@ -224,7 +224,7 @@ export function Contact() {
               </div>
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

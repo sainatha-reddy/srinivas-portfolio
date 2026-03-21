@@ -137,7 +137,7 @@ export function Experience() {
   };
 
   return (
-    <section id="experience" ref={containerRef} className="py-16 relative overflow-hidden bg-gray-950">
+    <section id="experience" ref={containerRef} className="py-12 relative overflow-hidden bg-gray-950/20">
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] right-[10%] w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]"></div>
@@ -250,7 +250,7 @@ export function Experience() {
       </div>
 
       <style>{`
-        section {
+        #experience {
           perspective: 1000px;
         }
       `}</style>

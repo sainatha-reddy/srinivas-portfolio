@@ -17,13 +17,12 @@ export function Achievements() {
 
             if (!section || !trigger) return;
 
-            // Ensure we calculate width after fonts/layout
-            const scrollWidth = section.scrollWidth;
-            const windowWidth = window.innerWidth;
-            const amountToScroll = Math.max(0, scrollWidth - windowWidth + (windowWidth * 0.2)); // Extra buffer for padding
+            // Calculate scroll values matching the Projects section approach
+            const totalWidth = section.scrollWidth;
+            const amountToScroll = totalWidth - window.innerWidth;
 
             gsap.to(section, {
-                x: -(scrollWidth - windowWidth + (windowWidth * 0.1)),
+                x: -amountToScroll,
                 ease: "none",
                 scrollTrigger: {
                     trigger: trigger,
@@ -32,7 +31,6 @@ export function Achievements() {
                     pin: true,
                     scrub: 1,
                     invalidateOnRefresh: true,
-                    anticipatePin: 1,
                 }
             });
         });
@@ -90,7 +88,7 @@ export function Achievements() {
     ];
 
     return (
-        <section id="achievements" ref={triggerRef} className="py-24 overflow-hidden bg-[#030712] border-t border-white/5 relative z-10">
+        <section id="achievements" ref={triggerRef} className="pt-24 pb-12 overflow-hidden bg-gray-950/20 border-t border-white/5 relative z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
                 <div className="text-center">
                     <h2 className="text-4xl md:text-5xl font-black mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent tracking-tight">
@@ -106,7 +104,7 @@ export function Achievements() {
                 {achievements.map((item, index) => (
                     <div key={index} className="w-[300px] md:w-[450px] flex-shrink-0 self-stretch group">
                         <TiltCard className="h-full">
-                            <div className="relative h-full bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-3xl p-8 hover:bg-white/[0.05] hover:border-white/[0.2] transition-all duration-500 flex flex-col items-start text-left group/card">
+                            <div className="relative h-full bg-[#0a0a0a]/80 backdrop-blur-2xl border border-white/[0.1] rounded-3xl p-8 hover:bg-[#111111]/90 hover:border-white/[0.2] transition-all duration-500 flex flex-col items-start text-left group/card shadow-[0_8px_30px_rgb(0,0,0,0.5)]">
                                 <div className={`absolute top-0 right-0 w-24 h-24 bg-${item.color}-500/5 blur-2xl -mr-12 -mt-12 group-hover/card:bg-${item.color}-500/10 transition-colors`}></div>
                                 
                                 <div className={`w-14 h-14 bg-${item.color}-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover/card:scale-110 transition-transform`}>
