@@ -3,9 +3,12 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { MeshTransmissionMaterial, Float, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 
+import { useMediaQuery } from '../../hooks/useMediaQuery';
+
 export function Prism() {
     const meshRef = useRef<THREE.Mesh>(null);
     const { viewport, mouse } = useThree();
+    const isTouch = useMediaQuery('(pointer: coarse)');
 
     useFrame((state, delta) => {
         if (meshRef.current) {
@@ -42,6 +45,8 @@ export function Prism() {
                         ior={1.5}
                         color="#e0f2fe" // sky-100
                         clearcoat={1}
+                        samples={isTouch ? 4 : 10} // Fewer samples on mobile
+                        resolution={isTouch ? 512 : 1024} // Lower resolution on mobile
                     />
                 </mesh>
             </Float>

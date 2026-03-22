@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { useMediaQuery } from '../../hooks/useMediaQuery';
 
 interface TiltCardProps {
     children: React.ReactNode;

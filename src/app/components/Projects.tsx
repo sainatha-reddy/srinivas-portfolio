@@ -83,6 +83,8 @@ export function Projects() {
           pin: true,
           scrub: 1,
           invalidateOnRefresh: true,
+          fastScrollEnd: true,
+          preventOverlaps: true,
         }
       });
     });
@@ -105,7 +107,11 @@ export function Projects() {
       </div>
 
       {/* Projects Horizontal Container */}
-      <div className="flex gap-4 md:gap-6 px-[5vw] md:px-[10vw]" ref={sectionRef} style={{ width: 'max-content' }}>
+      <div 
+        className="flex gap-4 md:gap-6 px-[5vw] md:px-[10vw] will-change-transform" 
+        ref={sectionRef} 
+        style={{ width: 'max-content', transform: 'translate3d(0,0,0)' }}
+      >
         {projects.map((project, index) => (
           <div key={index} className="w-[280px] sm:w-[320px] md:w-[360px] flex-shrink-0 self-stretch group pb-8">
             <TiltCard className="h-full rounded-3xl">
