@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLenis } from '@studio-freight/react-lenis';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,11 +14,17 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const lenis = useLenis();
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (lenis) {
+      lenis.scrollTo(`#${id}`, { offset: -64 });
       setIsMobileMenuOpen(false);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
     }
   };
 

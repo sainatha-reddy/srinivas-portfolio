@@ -55,19 +55,19 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
                 rotateY,
                 transformStyle: 'preserve-3d',
             }}
-            className={`relative rounded-xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 ${className}`}
+            className={`relative rounded-[inherit] ${className}`}
         >
             {/* Inner container to pop out content visually */}
             <div
                 style={{ transform: 'translateZ(50px)' }}
-                className="w-full h-full"
+                className="w-full h-full rounded-[inherit]"
             >
                 {children}
             </div>
 
             {/* Subtle glare effect that moves with the mouse */}
             <motion.div
-                className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-tr from-white/5 to-transparent opacity-0 mix-blend-overlay transition-opacity duration-300"
+                className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-tr from-white/5 to-transparent opacity-0 mix-blend-overlay transition-opacity duration-300"
                 whileHover={{ opacity: 1 }}
                 style={{
                     // We can map the background position to the inverse of the rotation for a cool fake lighting effect
