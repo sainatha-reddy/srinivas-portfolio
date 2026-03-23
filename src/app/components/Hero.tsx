@@ -1,7 +1,4 @@
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
-import { TextReveal3D } from './ui/TextReveal3D';
-import { ModelViewer } from './3d/ModelViewer';
-import { Canvas } from '@react-three/fiber';
 export function Hero() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

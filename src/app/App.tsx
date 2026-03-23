@@ -26,7 +26,7 @@ export default function App() {
   return (
     <ReactLenis root>
       <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white relative overflow-x-hidden">
-        {/* Floating Prism Background Layer */}
+        {/* Floating Prism Background Layer - Optimized for all devices */}
         <div 
           className="fixed inset-0 z-0 pointer-events-none mix-blend-screen overflow-hidden opacity-0"
           style={{ animation: 'fadePrism 3s ease-in-out forwards' }}
@@ -37,7 +37,18 @@ export default function App() {
               to { opacity: 0.3; }
             }
           `}</style>
-          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+          <Canvas 
+            camera={{ position: [0, 0, 5], fov: 75 }}
+            dpr={[1, 2]} // Limit DPR for performance
+            performance={{ min: 0.5 }} // Automatic performance scaling
+            gl={{ 
+              antialias: false, 
+              powerPreference: "high-performance",
+              alpha: true,
+              stencil: false,
+              depth: true
+            }}
+          >
             <Prism />
           </Canvas>
         </div>
