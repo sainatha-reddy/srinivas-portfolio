@@ -21,8 +21,11 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['15deg', '-15deg']);
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-15deg', '15deg']);
 
+    const isTouch = useMediaQuery('(pointer: coarse)');
+
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        if (!ref.current) return;
+        if (!ref.current || isTouch) return;
+        // ... (rest of mouse move logic remains same, but won't run if touch)
 
         // Get dimensions of the element
         const rect = ref.current.getBoundingClientRect();

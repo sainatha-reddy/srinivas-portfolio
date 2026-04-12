@@ -81,7 +81,7 @@ export function Projects() {
           start: "top top",
           end: () => `+=${amountToScroll}`,
           pin: true,
-          scrub: 1,
+          scrub: 0.1, // Near-instant response instead of 1s lag
           invalidateOnRefresh: true,
           fastScrollEnd: true,
           preventOverlaps: true,

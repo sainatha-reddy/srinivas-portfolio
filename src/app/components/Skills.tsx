@@ -96,9 +96,9 @@ export function Skills() {
     <section id="skills" ref={triggerRef} className="py-12 relative overflow-hidden bg-gray-950/20">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="skill-blob absolute top-[10%] left-[5%] w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]"></div>
-        <div className="skill-blob absolute bottom-[10%] right-[5%] w-96 h-96 bg-purple-500/10 rounded-full blur-[120px]"></div>
-        <div className="skill-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 rounded-full blur-[80px]"></div>
+        <div className="skill-blob absolute top-[10%] left-[5%] w-72 h-72 bg-blue-500/10 rounded-full blur-[60px] will-change-transform"></div>
+        <div className="skill-blob absolute bottom-[10%] right-[5%] w-96 h-96 bg-purple-500/10 rounded-full blur-[80px] will-change-transform"></div>
+        <div className="skill-blob absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 rounded-full blur-[40px] will-change-transform"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -161,7 +161,7 @@ export function Skills() {
                   ease: "power2.out"
                 });
               }}
-              className="skill-card group relative bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 transition-all duration-300 hover:border-white/[0.15] overflow-hidden"
+              className="skill-card group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 transition-all duration-300 hover:border-white/[0.15] overflow-hidden"
               style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}
             >
               {/* Animated Border Beam */}

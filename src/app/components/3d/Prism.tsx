@@ -13,40 +13,39 @@ export function Prism() {
     useFrame((state, delta) => {
         if (meshRef.current) {
             // Base rotation
-            meshRef.current.rotation.x += delta * 0.2;
-            meshRef.current.rotation.y += delta * 0.3;
+            meshRef.current.rotation.x += delta * 0.15;
+            meshRef.current.rotation.y += delta * 0.2;
 
-            // Mouse tilt effect
-            const targetX = (mouse.x * viewport.width) / 10;
-            const targetY = (mouse.y * viewport.height) / 10;
+            // Smooth mouse tilt effect using damp for better performance and feel
+            const targetX = (mouse.x * viewport.width) / 12;
+            const targetY = (mouse.y * viewport.height) / 12;
 
-            meshRef.current.rotation.x += (targetY - meshRef.current.rotation.x) * 0.1;
-            meshRef.current.rotation.y += (targetX - meshRef.current.rotation.y) * 0.1;
+            meshRef.current.rotation.x = THREE.MathUtils.damp(meshRef.current.rotation.x, targetY, 2, delta);
+            meshRef.current.rotation.y = THREE.MathUtils.damp(meshRef.current.rotation.y, targetX, 2, delta);
         }
     });
 
     return (
         <>
-            <Environment preset="city" />
-            <Float speed={2} rotationIntensity={1} floatIntensity={2}>
+            <Environment preset="apartment" /> {/* Lighter environment than city */}
+            <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1.5}>
                 <mesh ref={meshRef}>
-                    {/* A complex geometry like an Icosahedron looks great with transmission */}
                     <icosahedronGeometry args={[2, 0]} />
-
                     <MeshTransmissionMaterial
-                        backside
-                        backsideThickness={1}
-                        thickness={2}
-                        chromaticAberration={1}
-                        anisotropy={0.5}
-                        distortion={0.5}
-                        distortionScale={0.5}
-                        temporalDistortion={0.1}
-                        ior={1.5}
-                        color="#e0f2fe" // sky-100
-                        clearcoat={1}
-                        samples={isTouch ? 4 : 10} // Fewer samples on mobile
-                        resolution={isTouch ? 512 : 1024} // Lower resolution on mobile
+                        backside={false}
+                        thickness={0.5} // Thinner for better clarity without blend
+                        chromaticAberration={0.02}
+                        anisotropy={0}
+                        distortion={0} // Disable distortion for performance
+                        distortionScale={0}
+                        temporalDistortion={0}
+                        ior={1.2} // Lower IOR for subtler look
+                        color="#ffffff" // White for better natural blending
+                        clearcoat={0.5}
+                        roughness={0.1}
+                        transmission={1}
+                        samples={isTouch ? 1 : 2} // Minimal samples for peak performance
+                        resolution={isTouch ? 128 : 256} // Minimal resolution
                     />
                 </mesh>
             </Float>

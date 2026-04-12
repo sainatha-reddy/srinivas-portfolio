@@ -30,7 +30,7 @@ export function TextReveal3D({ text, className = '', delay = 0 }: TextReveal3DPr
                 type: "spring",
                 damping: 12,
                 stiffness: 100,
-            },
+            } as const,
         },
         hidden: {
             opacity: 0,
@@ -40,7 +40,7 @@ export function TextReveal3D({ text, className = '', delay = 0 }: TextReveal3DPr
                 type: "spring",
                 damping: 12,
                 stiffness: 100,
-            },
+            } as const,
         },
     };
 
