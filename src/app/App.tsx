@@ -11,11 +11,15 @@ import { Footer } from './components/Footer';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { Canvas } from '@react-three/fiber';
 import { Prism } from './components/3d/Prism';
+import { AdaptiveDpr, AdaptiveEvents } from '@react-three/drei';
 import { Toaster } from 'sonner';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function App() {
   useEffect(() => {
+    // Normalize scroll for performance and sync across all devices
+    ScrollTrigger.normalizeScroll(true);
+
     // Refresh ScrollTrigger to ensure all positions are calculated correctly
     const timer = setTimeout(() => {
       ScrollTrigger.refresh();
@@ -25,30 +29,33 @@ export default function App() {
 
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 text-white relative overflow-x-hidden">
+      <div className="min-h-screen bg-gray-950 text-white relative overflow-x-hidden">
         {/* Floating Prism Background Layer - Optimized for all devices */}
-        <div 
-          className="fixed inset-0 z-0 pointer-events-none mix-blend-screen overflow-hidden opacity-0"
+        <div
+          className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-0"
           style={{ animation: 'fadePrism 3s ease-in-out forwards' }}
         >
           <style>{`
             @keyframes fadePrism {
               from { opacity: 0; }
-              to { opacity: 0.3; }
+              to { opacity: 0.25; }
             }
           `}</style>
-          <Canvas 
+          <Canvas
             camera={{ position: [0, 0, 5], fov: 75 }}
-            dpr={[1, 2]} // Limit DPR for performance
+            dpr={[1, 1.5]} // Limit DPR further for performance stability
             performance={{ min: 0.5 }} // Automatic performance scaling
-            gl={{ 
-              antialias: false, 
+            gl={{
+              antialias: false,
               powerPreference: "high-performance",
               alpha: true,
               stencil: false,
-              depth: true
+              depth: true,
+              failIfMajorPerformanceCaveat: true
             }}
           >
+            <AdaptiveDpr pixelated />
+            <AdaptiveEvents />
             <Prism />
           </Canvas>
         </div>

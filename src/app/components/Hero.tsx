@@ -31,10 +31,10 @@ export function Hero() {
 
 
       <section id="about" className="font-outfit min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto w-full relative z-10 pl-16 lg:pl-0">
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
-            <div className="order-1 md:order-1 pt-8 md:pt-0">
+            <div className="order-1 md:order-1 pt-8 md:pt-0 flex flex-col items-center md:items-start text-center md:text-left">
               <div className="inline-block mb-3 px-4 py-1.5 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full opacity-0 animate-fade-up">
                 <span className="text-blue-400 text-sm font-medium tracking-wide">👋 Welcome to my portfolio</span>
               </div>
@@ -54,7 +54,7 @@ export function Hero() {
                 Engineering Analyst at Accenture, B.Tech in Computer Science & Engineering (AI Major) at IIITDM Kancheepuram. Secured GATE AIR 253 in Data Science & Artificial Intelligence. I focus on building intelligent systems that address real-world problems, with specialization in deep learning, natural language processing, and computer vision. Experienced in developing production-ready machine learning models and scalable APIs.
               </p>
 
-              <div className="flex flex-wrap gap-4 opacity-0 animate-fade-up delay-500">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 opacity-0 animate-fade-up delay-500">
                 <button
                   onClick={() => scrollToSection('projects')}
                   className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-purple-500/50 hover:-translate-y-0.5 transition-all duration-300 pointer-events-auto"
@@ -70,7 +70,7 @@ export function Hero() {
               </div>
 
               {/* Social Links Expanding Pills */}
-              <div className="flex flex-wrap items-center gap-3 mt-8 opacity-0 animate-fade-up delay-600">
+              <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mt-8 opacity-0 animate-fade-up delay-600">
                 <a
                   href="https://github.com/srinivastls"
                   target="_blank"
@@ -110,8 +110,8 @@ export function Hero() {
             {/* Right Column - Image */}
             <div className="order-2 md:order-2 flex justify-center md:justify-end opacity-0 animate-fade-up delay-600">
               <div className="relative w-[300px] h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]">
-                {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                {/* Gradient Background - Optimized blur */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
 
                 {/* Main Image Container */}
                 <div className="relative z-10 w-full h-full p-2">
